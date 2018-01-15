@@ -40,6 +40,7 @@ public class Lambda3 {
         // Functions
 
         Function<String, Integer> toInteger = Integer::valueOf;
+        toInteger.apply("123");
         Function<String, String> backToString = toInteger.andThen(String::valueOf);
 
         backToString.apply("123");     // "123"
@@ -50,7 +51,6 @@ public class Lambda3 {
         Supplier<Person> personSupplier = Person::new;
         personSupplier.get();   // new Person
 
-
         // Consumers
 
         Consumer<Person> greeter = (p) -> System.out.println("Hello, " + p.firstName);
@@ -60,7 +60,8 @@ public class Lambda3 {
 
         // Comparators
 
-        Comparator<Person> comparator = (p1, p2) -> p1.firstName.compareTo(p2.firstName);
+        Comparator<Person> comparator = Comparator.comparing(p -> p.firstName);
+//        Comparator<Person> comparator = (p1, p2) -> p1.firstName.compareTo(p2.firstName);
 
         Person p1 = new Person("John", "Doe");
         Person p2 = new Person("Alice", "Wonderland");

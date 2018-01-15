@@ -17,6 +17,7 @@ public class Interface1 {
         }
     }
 
+
     public static void main(String[] args) {
         Formula formula1 = new Formula() {
             @Override
@@ -29,7 +30,14 @@ public class Interface1 {
         formula1.sqrt(-23);          // 0.0
         Formula.positive(-4);        // 0.0
 
+
 //        Formula formula2 = (a) -> sqrt( a * 100);
+
+        Formula formula3 = (a) -> Math.sqrt(a * 100);
+        System.out.println(formula3.calculate(1));
+
+
+
     }
 
 }

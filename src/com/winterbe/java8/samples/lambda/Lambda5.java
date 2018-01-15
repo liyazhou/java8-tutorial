@@ -20,6 +20,10 @@ public class Lambda5 {
 
         System.out.println("##################");
 
+        BiConsumer<String, Integer> printKeyAndValue2 = (key, value) -> System.out.println(key + "-" + value);
+        printKeyAndValue2.accept("lyz_one", 1);
+        printKeyAndValue2.accept("lyz_two", 2);
+
         //Java Hash-Map foreach supports BiConsumer
         HashMap<String, Integer> dummyValues = new HashMap<>();
         dummyValues.put("One", 1);
@@ -27,6 +31,12 @@ public class Lambda5 {
         dummyValues.put("Three", 3);
 
         dummyValues.forEach((key,value) -> System.out.println(key+"-"+value));
+
+
+        HashMap<String, Integer> dummyValues2 = new HashMap<>();
+        dummyValues2.put("lyz_one", 1);
+
+        dummyValues2.forEach((key, value) -> System.out.println(key + "_" + value));
 
     }
 }

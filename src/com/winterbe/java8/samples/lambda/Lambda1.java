@@ -1,5 +1,6 @@
 package com.winterbe.java8.samples.lambda;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -38,12 +39,21 @@ public class Lambda1 {
         List<String> names2 = Arrays.asList("peter", null, "anna", "mike", "xenia");
         names2.sort(Comparator.nullsLast(String::compareTo));
         System.out.println(names2);
+        names2.sort(Comparator.nullsFirst(String::compareTo));
+        System.out.println(names2);
 
         List<String> names3 = null;
 
         Optional.ofNullable(names3).ifPresent(list -> list.sort(Comparator.naturalOrder()));
 
         System.out.println(names3);
+
+        names3 = new ArrayList<>();
+        names3.add("liyazhou");
+//        names3.add(null);
+        Optional.ofNullable(names3).ifPresent(list -> list.sort(Comparator.naturalOrder()));
+        System.out.println(names3);
+
     }
 
 }
