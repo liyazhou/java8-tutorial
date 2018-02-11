@@ -5,6 +5,7 @@ import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Arrays;
 
 /**
  * @author Benjamin Winterberg
@@ -39,6 +40,7 @@ public class Annotations1 {
 
         Hints hints1 = Person.class.getAnnotation(Hints.class);
         System.out.println(hints1.value().length);  // 2
+        System.out.println(Arrays.toString(hints1.value()));
 
         Hint[] hints2 = Person.class.getAnnotationsByType(Hint.class);
         System.out.println(hints2.length);  // 2

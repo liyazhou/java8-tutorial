@@ -1,6 +1,7 @@
 package com.winterbe.java8.samples.stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,7 +49,8 @@ public class Streams1 {
         stringCollection
                 .stream()
                 .map(String::toUpperCase)
-                .sorted((a, b) -> b.compareTo(a))
+//                .sorted((a, b) -> b.compareTo(a))
+                .sorted(Comparator.reverseOrder())
                 .forEach(System.out::println);
 
         // "DDD2", "DDD1", "CCC", "BBB3", "BBB2", "AAA2", "AAA1"

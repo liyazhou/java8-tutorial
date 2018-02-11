@@ -17,6 +17,8 @@ public class Maps1 {
 
         map.forEach((id, val) -> System.out.println(val));
 
+        map.forEach((id, val) -> System.out.println(id + val));
+
 
         map.computeIfPresent(3, (num, val) -> val + num);
         System.out.println(map.get(3));             // val33
@@ -28,6 +30,7 @@ public class Maps1 {
         System.out.println(map.containsKey(23));    // true
 
         map.computeIfAbsent(3, num -> "bam");
+//        map.putIfAbsent(3, "bam");
         System.out.println(map.get(3));             // val33
 
         System.out.println(map.getOrDefault(42, "not found"));      // not found
