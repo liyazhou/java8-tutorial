@@ -14,6 +14,7 @@ public class Streams5 {
 
     public static void main(String[] args) {
         List<String> strings =
+//            Arrays.asList("d2", "a2", "a3","b1", "b3", "c");
             Arrays.asList("d2", "a2", "b1", "b3", "c");
 
 //        test1(strings);
@@ -32,8 +33,10 @@ public class Streams5 {
                 .stream()
                 .filter(s -> s.startsWith("a"));
 
-        streamSupplier.get().anyMatch(s -> true);
-        streamSupplier.get().noneMatch(s -> true);
+        boolean anyResult = streamSupplier.get().anyMatch(s -> true);
+        System.out.println(anyResult);
+        boolean noneResult = streamSupplier.get().noneMatch(s -> true);
+        System.out.println(noneResult);
     }
 
     // stream has already been operated upon or closed
@@ -48,7 +51,7 @@ public class Streams5 {
 
     // short-circuit
     private static void test6(List<String> stringCollection) {
-        stringCollection
+        boolean result = stringCollection
             .stream()
             .map(s -> {
                 System.out.println("map:      " + s);
@@ -58,6 +61,7 @@ public class Streams5 {
                 System.out.println("anyMatch: " + s);
                 return s.startsWith("A");
             });
+        System.out.println(result);
     }
 
     private static void test5(List<String> stringCollection) {
