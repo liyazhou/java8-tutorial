@@ -7,7 +7,7 @@ public class Math1 {
 
     public static void main(String[] args) {
         testMathExact();
-        testUnsignedInt();
+//        testUnsignedInt();
     }
 
     private static void testUnsignedInt() {

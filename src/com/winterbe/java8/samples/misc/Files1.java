@@ -17,13 +17,13 @@ public class Files1 {
 
     public static void main(String[] args) throws IOException {
         testWalk();
-        testFind();
-        testList();
-        testLines();
-        testReader();
-        testWriter();
-        testReadWriteLines();
-        testReaderLines();
+//        testFind();
+//        testList();
+//        testLines();
+//        testReader();
+//        testWriter();
+//        testReadWriteLines();
+//        testReaderLines();
     }
 
     private static void testReaderLines() throws IOException {
